@@ -123,3 +123,20 @@ failed.map(Path.unlink);
 interp.plot_confusion_matrix()
 ```
 - Confusion matrix: number of actual vs number of predicted
+
+## Keras cats vs dogs
+official : https://gist.github.com/bdallard/ed166ad884491c191d877c07e0b18008 \
+mine: https://github.com/Pakopac/colab_fastai/blob/master/keras_CatsVSDogs.ipynb
+
+- imageNet: public image database with labeled and sorted images 
+- Keras: high level library for deep learning with python
+- tensorflow: one of the greatests library for machine learning developped by google 
+
+keras.preprocessing.image:
+- kpi.load_img: to load image and display it
+```
+x_0 = kpi.img_to_array(kpi.load_img(data_dir_sub+"/train/cats/cat.0.jpg"))
+x_1 = kpi.img_to_array(kpi.load_img(data_dir_sub+"/train/cats/cat.1.jpg"))
+x_0.shape, x_1.shape
+```
+- img_to_array generate an array from image and we can get size with .shape
