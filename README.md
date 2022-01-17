@@ -4,7 +4,7 @@ Course => https://course.fast.ai/ \
 Videos => https://course.fast.ai/videos/ \
 Colab notebooks => https://course.fast.ai/start_colab
 
-## Notes
+## Notebook #1
 https://github.com/Pakopac/colab_fastai/blob/master/01_intro.ipynb
 ### "Your first model" part
 ```
@@ -25,8 +25,12 @@ learn.fine_tune(1)
 ```
 - fastai.vision: image recognition
 - untar_data: Get a dataset and untar it
-- ImageDataLoaders: Load images for algorithm, valid_pct and seed are used for random, label_func check if is cat and item_tfms transform images
-- cnn_learner: build a model with our datas and resnet34 (pre-trained model) using cnn algorithm https://en.wikipedia.org/wiki/Convolutional_neural_network
+- ImageDataLoaders: Load images for algorithm, valid_pct is used to avoid overfitting and seed is used for random, label_func check if is cat and item_tfms transform images
+- cnn_learner: 
+    - build our model using cnn algorithm https://en.wikipedia.org/wiki/Convolutional_neural_network
+    - dls: our datas 
+    - resnet34: pre-trained model
+    - metrics=error_rate: check percent incorretly classified by the model
 - fine_tune: train model
 
 ```
@@ -77,3 +81,45 @@ learn.predict("I really liked that movie!")
 
 --- CollabDataLoaders ---
 - Recommend system to predict a ranking
+## Notebook #2
+https://github.com/Pakopac/colab_fastai/blob/master/02_production.ipynb
+### "clean" part
+```
+if not path.exists():
+    path.mkdir()
+    for o in bear_types:
+        dest = (path/o)
+        dest.mkdir(exist_ok=True)
+        results = search_images_bing(key, f'{o} bear')
+        download_images(dest, urls=results.attrgot('contentUrl'))
+```
+- Download images for each category
+```
+failed.map(Path.unlink);
+```
+ - Delete corrupted images
+
+ ### "From Data to DataLoaders" part
+
+ ```
+ bears = DataBlock(
+    blocks=(ImageBlock, CategoryBlock), 
+    get_items=get_image_files, 
+    splitter=RandomSplitter(valid_pct=0.2, seed=42),
+    get_y=parent_label,
+    item_tfms=Resize(128))
+ ```
+ - ImageBlock: input data are images, CategoryBlock: labels are categories (grizzly, black, teddy)
+ - Splitter: split data into a validation set (randomsplit)
+ - Get_y= parent_label: get each item at the name of the parent (ex /black/XXX get each items from /black)
+
+ ```
+ dls.valid.show_batch(max_n=4, nrows=1)
+ ```
+ - Class images into categories
+
+ ```
+ interp = ClassificationInterpretation.from_learner(learn)
+interp.plot_confusion_matrix()
+```
+- Confusion matrix: number of actual vs number of predicted
