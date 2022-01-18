@@ -147,7 +147,11 @@ x_0.shape, x_1.shape
 ### Differences models keras
 ![Capture d’écran du 2022-01-18 11-17-58](https://user-images.githubusercontent.com/33722914/149920195-0c2f27cb-d05c-4f6b-be69-effe20f0f380.png)
 
-## Reminder
-How to choose algorithm
+## Reminder
+How to choose algorithm \
 https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
 ![Capture d’écran du 2022-01-18 16-00-22](https://user-images.githubusercontent.com/33722914/149962139-8602a0f1-73cc-471f-9378-4f62af6612cb.png)
+- Classification for problems with categories
+- Regression for problems with numerics values
+- Random forest: a set of randoms decisions trees with differents parameters 
+
