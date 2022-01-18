@@ -138,7 +138,6 @@ mine: https://github.com/Pakopac/colab_fastai/blob/master/keras_CatsVSDogs.ipynb
 keras.preprocessing.image:
 - kpi.load_img: to load image and display it
 ```
-
 x_0 = kpi.img_to_array(kpi.load_img(data_dir_sub+"/train/cats/cat.0.jpg"))
 x_1 = kpi.img_to_array(kpi.load_img(data_dir_sub+"/train/cats/cat.1.jpg"))
 x_0.shape, x_1.shape
@@ -147,3 +146,8 @@ x_0.shape, x_1.shape
 
 ### Differences models keras
 ![Capture d’écran du 2022-01-18 11-17-58](https://user-images.githubusercontent.com/33722914/149920195-0c2f27cb-d05c-4f6b-be69-effe20f0f380.png)
+
+## Reminder
+How to choose algorithm
+https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+![Capture d’écran du 2022-01-18 16-00-22](https://user-images.githubusercontent.com/33722914/149962139-8602a0f1-73cc-471f-9378-4f62af6612cb.png)
