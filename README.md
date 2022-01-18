@@ -128,9 +128,12 @@ interp.plot_confusion_matrix()
 official : https://gist.github.com/bdallard/ed166ad884491c191d877c07e0b18008 \
 mine: https://github.com/Pakopac/colab_fastai/blob/master/keras_CatsVSDogs.ipynb
 
-- imageNet: public image database with labeled and sorted images 
+- ImageNet: public image database with labeled and sorted images 
 - Keras: high level library for deep learning with python
-- tensorflow: one of the greatests library for machine learning developped by google 
+- Tensorflow: one of the greatests library for machine learning developped by google 
+- Pillow, PIL (Python Imaging Library): librairy for quick and powerfull processing images in python
+- Epoch: the number times that the learning algorithm will work through the entire training dataset
+- Batch: the number of samples to work through before updating the internal model parameters
 
 keras.preprocessing.image:
 - kpi.load_img: to load image and display it
