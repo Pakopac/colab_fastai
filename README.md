@@ -145,5 +145,5 @@ x_0.shape, x_1.shape
 ```
 - img_to_array generate an array from image and we can get size with .shape
 
-### difference models keras
+### Differences models keras
 ![Capture d’écran du 2022-01-18 11-17-58](https://user-images.githubusercontent.com/33722914/149920195-0c2f27cb-d05c-4f6b-be69-effe20f0f380.png)
