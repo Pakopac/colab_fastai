@@ -135,8 +135,12 @@ mine: https://github.com/Pakopac/colab_fastai/blob/master/keras_CatsVSDogs.ipynb
 keras.preprocessing.image:
 - kpi.load_img: to load image and display it
 ```
+
 x_0 = kpi.img_to_array(kpi.load_img(data_dir_sub+"/train/cats/cat.0.jpg"))
 x_1 = kpi.img_to_array(kpi.load_img(data_dir_sub+"/train/cats/cat.1.jpg"))
 x_0.shape, x_1.shape
 ```
 - img_to_array generate an array from image and we can get size with .shape
+
+### difference models keras
+![Capture d’écran du 2022-01-18 11-17-58](https://user-images.githubusercontent.com/33722914/149920195-0c2f27cb-d05c-4f6b-be69-effe20f0f380.png)
